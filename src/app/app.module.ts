@@ -15,6 +15,8 @@ import { ROUTES } from './app.routes';
 //services
 import { SpitofyService } from './services/spitofy.service';
 import { NoimagePipe } from './pipes/noimage.pipe';
+import { CardsComponent } from './components/cards/cards.component';
+import { LoadingsComponent } from './components/shared/loadings/loadings.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { NoimagePipe } from './pipes/noimage.pipe';
     ArtistaComponent,
     NavbarComponent,
     NoimagePipe,
+    CardsComponent,
+    LoadingsComponent,
   ],
   imports: [
     BrowserModule,

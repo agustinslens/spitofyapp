@@ -9,12 +9,14 @@ import { SpitofyService } from 'src/app/services/spitofy.service';
 export class HomeComponent implements OnInit {
 
   nuevasCanciones:any[]=[];
+  loading:boolean;
 
   constructor(private spitofy: SpitofyService) {
+    this.loading=true;
     this.spitofy.getNewRealises()
     .subscribe((data:any) =>{
-      console.log();
       this.nuevasCanciones = data;
+      this.loading=false
     })
   }
 
