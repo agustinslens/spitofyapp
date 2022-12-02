@@ -1,0 +1,13 @@
+
+.navbar_brand_compo{
+    margin-left: 20px;
+    width: 140px;
+}
+
+.navbar_link{
+    color: rgb(199, 196, 196);
+}
+
+.navbar_link:active{
+color: rgb(41, 245, 41);
+}
