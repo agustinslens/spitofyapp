@@ -17,6 +17,7 @@ import { SpitofyService } from './services/spitofy.service';
 import { NoimagePipe } from './pipes/noimage.pipe';
 import { CardsComponent } from './components/cards/cards.component';
 import { LoadingsComponent } from './components/shared/loadings/loadings.component';
+import { ErrorControllerComponent } from './components/shared/error-controller/error-controller.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { LoadingsComponent } from './components/shared/loadings/loadings.compone
     NoimagePipe,
     CardsComponent,
     LoadingsComponent,
+    ErrorControllerComponent,
   ],
   imports: [
     BrowserModule,

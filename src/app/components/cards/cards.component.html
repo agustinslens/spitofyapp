@@ -1,12 +1,19 @@
 <div class="animated fadeIn">
     <div *ngFor="let item of items" class="card w-75 home_card_container m-2">
-        <div class="home_img_container">
+        <div *ngIf="item.type === 'artist'; else templateName" class="puntero home_img_container">
+          <div (click)="artistDetail(item)">
+            <img [src]="item.images | noimage" alt="" height="147px">
+          </div>
+        </div>
+        <ng-template #templateName>
+          <div  class="puntero home_img_container">
             <img [src]="item.images | noimage" alt="" height="147px">
         </div>
+      </ng-template>
+        
         <div class="card-body">
           <h5 class="card-title">{{item.name}}</h5>
-          <p class="card-text"><span *ngFor="let art of item.artists" class="badge badge-secondary home_card_badge" >{{art.name}}</span></p>
-          <a href="#" class="btn btn-primary">Ir al perfil</a>
+          <p   class="card-text puntero"><span  *ngFor="let art of item.artists; index as i" (click)="artistDetail(item,i)" class="badge badge-secondary home_card_badge" >{{art.name}}</span></p>
         </div>
       </div>
 </div>

@@ -16,7 +16,7 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {}
   buscar(termino: string) {
     this.loading = true;
-    this.spitofy.getArtist(termino).subscribe((data: any) => {
+    this.spitofy.getArtists(termino).subscribe((data: any) => {
       this.artistas = data;
       this.loading = false;
     });

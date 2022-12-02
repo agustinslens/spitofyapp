@@ -15,7 +15,7 @@ export class SpitofyService {
 
     const headers = new HttpHeaders({
       Authorization:
-        "Bearer BQBRto7M7dEvkQuZc2pjhHzN2IXl5MnHlQthJmMOVxwr9to64CCgZWQXkoBtZqPSEdgVx_9PVCCbMljr1Aoz1YpVIUasqnidu9pagYIXWAFVyO5HSfw",
+        "Bearer BQDsXf2O62F5qG2_CQKKGFgIR2YghhHXjSbYmjtVnOKT0uK-rhuiqZZrvnm3n06IbANlCpUrUo67T7xGOmRp_aUU5tWjwPccf6-aQLNhsL0dJoSePoU",
     });
 
     return this.http.get(url, { headers });
@@ -27,9 +27,19 @@ export class SpitofyService {
     );
   }
 
-  getArtist(termino: string) {
+  getArtists(termino: string) {
     return this.getQuery(`search?q=${termino}&type=artist&limit=15`).pipe(
       map((data: any) => data.artists.items)
+    );
+  }
+
+  getArtist(id: string) {
+    return this.getQuery(`artists/${id}`)
+  }
+
+  getTopTracks(id: string) {
+    return this.getQuery(`artists/${id}/top-tracks?country=us`).pipe(
+      map((data: any) => data.tracks)
     );
   }
 }
