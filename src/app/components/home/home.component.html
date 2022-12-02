@@ -1,7 +1,7 @@
 <div>
     <div *ngFor="let song of nuevasCanciones" class="card w-75 home_card_container">
         <div class="home_img_container">
-            <img [src]="song.images[1].url" alt="" height="147px">
+            <img [src]="song.images | noimage" alt="" height="147px">
         </div>
         <div class="card-body">
           <h5 class="card-title">{{song.name}}</h5>

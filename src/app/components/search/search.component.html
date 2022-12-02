@@ -14,7 +14,7 @@
 <div>
     <div *ngFor="let artist of artistas" class="card w-75 home_card_container">
         <div class="home_img_container">
-            <img [src]="artist.images[1].url" alt="" height="147px">
+            <img [src]="artist.images | noimage" alt="" height="147px">
         </div>
         <div class="card-body">
           <h5 class="card-title">{{artist.name}}</h5>
