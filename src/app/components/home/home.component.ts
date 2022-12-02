@@ -13,8 +13,8 @@ export class HomeComponent implements OnInit {
   constructor(private spitofy: SpitofyService) {
     this.spitofy.getNewRealises()
     .subscribe((data:any) =>{
-      console.log(data.albums.items);
-      this.nuevasCanciones = data.albums.items;
+      console.log();
+      this.nuevasCanciones = data;
     })
   }
 

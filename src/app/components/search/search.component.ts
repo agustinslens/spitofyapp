@@ -16,9 +16,7 @@ export class SearchComponent implements OnInit {
     console.log(termino);
     this.spitofy.getArtist(termino)
     .subscribe((data: any) => {
-      this.artistas = data.artists.items;
-      console.log(data.artists.items);
-      
+      this.artistas = data;
     });
   }
 }
